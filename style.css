@@ -276,3 +276,93 @@ footer{display:flex;justify-content:space-between;padding:24px 6vw;background:#1
   .wall-quote{right:2%;top:4%;width:150px;padding:14px;font-size:13px}
   .chat-card{width:265px;right:2%;bottom:2%}
 }
+
+
+/* ===== V8 NO-OVERLAP HERO FIX =====
+   Keep the quote panel completely outside the portrait footprint.
+   The portrait is slightly narrower and shifted left.
+*/
+.hero-photo{
+  position:relative;
+  min-height:700px;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+/* Reserve a clear right-side lane for the quote */
+.portrait-frame{
+  left:5% !important;
+  width:61% !important;
+  height:86% !important;
+  z-index:2 !important;
+}
+
+/* The quote now occupies its own column and never crosses the portrait */
+.wall-quote{
+  right:4% !important;
+  top:9% !important;
+  width:230px !important;
+  z-index:20 !important;
+  padding:24px 24px !important;
+  background:#fffaf4 !important;
+  border:1px solid #c9b7a7 !important;
+  box-shadow:0 14px 34px rgba(48,32,22,.12) !important;
+  pointer-events:none !important;
+}
+
+/* Ensure the photo itself never paints above the quote */
+.portrait-frame img{
+  position:relative;
+  z-index:2 !important;
+}
+
+/* Keep chat card in its own bottom-right lane */
+.chat-card{
+  right:3% !important;
+  bottom:3% !important;
+  z-index:30 !important;
+  width:300px !important;
+}
+
+@media(min-width:1500px){
+  .portrait-frame{
+    left:7% !important;
+    width:58% !important;
+  }
+  .wall-quote{
+    right:5% !important;
+    width:240px !important;
+  }
+}
+
+@media(max-width:1050px){
+  .portrait-frame{
+    left:4% !important;
+    width:68% !important;
+    height:82% !important;
+  }
+  .wall-quote{
+    right:3% !important;
+    width:180px !important;
+    font-size:15px !important;
+  }
+}
+
+@media(max-width:650px){
+  .portrait-frame{
+    left:2% !important;
+    width:70% !important;
+    height:76% !important;
+  }
+  .wall-quote{
+    right:2% !important;
+    width:145px !important;
+    top:4% !important;
+    padding:14px !important;
+    font-size:12px !important;
+  }
+  .chat-card{
+    width:255px !important;
+    right:2% !important;
+  }
+}
