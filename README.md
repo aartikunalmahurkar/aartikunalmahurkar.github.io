@@ -1,19 +1,22 @@
-# Aarti Kunal Mahurkar Portfolio
+# Aarti Kunal Mahurkar Portfolio — V5
 
-Ready for GitHub Pages at `aartikunalmahurkar.github.io`.
+Rebuilt from scratch to closely match the approved generated design.
 
-Files:
-- index.html
-- style.css
-- script.js
-- aarti-photo.jpg (extracted from the uploaded CV)
-- Aarti_Gaikwad_cv.pdf
+Uses:
+- Aarti's real resume photo
+- a 4K-class upscale of the real photo (`aarti-photo-4k.jpg`)
+- a blurred real-photo background (`aarti-photo-bg.jpg`)
+- cream / terracotta visual system
+- editorial serif hero
+- right-side portrait presentation
+- impact strip
+- About / Experience / Selected Work / Skills / Education / Contact
+- Ask Aarti chatbot
 
-The built-in “Ask Aarti” chatbot is a fully free, browser-only portfolio assistant.
-It does not call a paid AI API and answers from a curated knowledge base in script.js.
+## Deploy
+Upload ALL files from this folder to the root of `aartikunalmahurkar.github.io`.
+Replace existing `index.html`, `style.css`, and `script.js`.
 
-## Publish
-Upload all files to the repository root of:
-`aartikunalmahurkar.github.io`
+GitHub Pages will redeploy automatically.
 
-Then GitHub → Settings → Pages → Deploy from branch → main / root.
+If the old page still appears, hard-refresh with Ctrl+F5.
