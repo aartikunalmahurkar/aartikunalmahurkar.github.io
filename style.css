@@ -1595,42 +1595,132 @@ footer{
     grid-column:auto !important;
   }
 }
-/* MOBILE: keep Ask Aarti completely below the photo */
-@media (max-width: 650px) {
 
-  .hero-photo {
-    display: flex !important;
-    flex-direction: column !important;
+
+/* =========================================================
+   FINAL MOBILE FIX — Ask Aarti never overlaps Aarti's photo
+   This block must remain at the VERY END of the stylesheet.
+   ========================================================= */
+@media (max-width:650px){
+
+  /* Hero image area becomes a normal vertical stack */
+  .hero-photo{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    min-height:0 !important;
+    height:auto !important;
+    padding:14px !important;
+    margin:0 14px 18px !important;
+    overflow:hidden !important;
   }
 
-  .portrait-frame {
-    order: 1 !important;
-    position: relative !important;
+  /* Portrait is a normal-flow item */
+  .portrait-frame{
+    order:1 !important;
+    position:relative !important;
+    inset:auto !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+    display:flex !important;
+    align-items:flex-end !important;
+    justify-content:center !important;
+    overflow:visible !important;
+    transform:none !important;
+    z-index:2 !important;
+    flex:0 0 auto !important;
   }
 
-  .wall-quote {
-    order: 2 !important;
-    position: relative !important;
+  .portrait-frame img{
+    display:block !important;
+    position:relative !important;
+    width:100% !important;
+    max-width:320px !important;
+    height:auto !important;
+    max-height:none !important;
+    margin:0 auto !important;
+    object-fit:contain !important;
+    object-position:center bottom !important;
+    transform:none !important;
   }
 
-  .chat-card {
-    order: 3 !important;
+  /* Quote sits below portrait */
+  .wall-quote{
+    order:2 !important;
+    position:relative !important;
+    inset:auto !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+    width:100% !important;
+    max-width:none !important;
+    margin:14px 0 0 !important;
+    padding:14px 16px !important;
+    transform:none !important;
+    z-index:3 !important;
+    flex:0 0 auto !important;
+  }
 
-    position: static !important;
+  /* Ask Aarti is a true block BELOW portrait + quote */
+  .chat-card{
+    order:3 !important;
+    position:relative !important;
+    inset:auto !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+    width:100% !important;
+    max-width:none !important;
+    height:auto !important;
+    margin:14px 0 0 !important;
+    padding:12px !important;
+    transform:none !important;
+    z-index:4 !important;
+    flex:0 0 auto !important;
+    align-self:stretch !important;
+  }
 
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
+  /* Keep the round floating chatbot button small and away from content */
+  .chat-fab{
+    width:48px !important;
+    height:48px !important;
+    right:12px !important;
+    bottom:12px !important;
+    z-index:90 !important;
+  }
 
-    inset: auto !important;
-    transform: none !important;
+  .chat-panel{
+    right:8px !important;
+    bottom:68px !important;
+    width:calc(100vw - 16px) !important;
+    max-width:none !important;
+    height:min(520px,calc(100vh - 84px)) !important;
+  }
+}
 
-    width: 100% !important;
-    max-width: 340px !important;
+/* Extra safety for very small phones */
+@media (max-width:390px){
+  .hero-photo{
+    margin-left:10px !important;
+    margin-right:10px !important;
+    padding:12px !important;
+  }
 
-    margin: 14px auto 0 !important;
+  .portrait-frame img{
+    max-width:290px !important;
+  }
 
-    z-index: auto !important;
+  .wall-quote,
+  .chat-card{
+    width:100% !important;
   }
 }
