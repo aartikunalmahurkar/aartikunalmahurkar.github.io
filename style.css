@@ -154,18 +154,7 @@ footer{display:flex;justify-content:space-between;padding:24px 6vw;background:#1
     radial-gradient(circle at 58% 45%,rgba(255,255,255,.35),transparent 30%);
 }
 .office-sign{
-  position:absolute;
-  left:7%;
-  top:8%;
-  z-index:1;
-  display:flex;
-  gap:12px;
-  align-items:center;
-  width:245px;
-  padding:16px 18px;
-  background:rgba(255,255,255,.72);
-  border:1px solid rgba(120,95,75,.22);
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  display: none !important;
 }
 .office-logo{
   color:#173b74;
