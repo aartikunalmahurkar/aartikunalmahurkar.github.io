@@ -161,11 +161,6 @@ footer{display:flex;justify-content:space-between;padding:24px 6vw;background:#1
   font-weight:800;
   font-size:24px;
 }
-.office-sign strong{
-  color:#173b74;
-  font-size:17px;
-  line-height:1;
-}
 .office-desk{
   position:absolute;
   right:-3%;
