@@ -506,3 +506,12 @@ footer{display:flex;justify-content:space-between;padding:24px 6vw;background:#1
     bottom:10px !important;
   }
 }
+
+
+/* ===== V11 REMOVE DASSAULT SIGN FROM HERO ===== */
+.office-sign,
+.ds-sign,
+.office-logo,
+.ds-mark{
+  display:none !important;
+}
