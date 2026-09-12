@@ -1595,3 +1595,42 @@ footer{
     grid-column:auto !important;
   }
 }
+/* MOBILE: keep Ask Aarti completely below the photo */
+@media (max-width: 650px) {
+
+  .hero-photo {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .portrait-frame {
+    order: 1 !important;
+    position: relative !important;
+  }
+
+  .wall-quote {
+    order: 2 !important;
+    position: relative !important;
+  }
+
+  .chat-card {
+    order: 3 !important;
+
+    position: static !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    inset: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: 340px !important;
+
+    margin: 14px auto 0 !important;
+
+    z-index: auto !important;
+  }
+}
