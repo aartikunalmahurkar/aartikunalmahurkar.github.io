@@ -366,3 +366,143 @@ footer{display:flex;justify-content:space-between;padding:24px 6vw;background:#1
     right:2% !important;
   }
 }
+
+
+/* ===== V10 HARD FIX: QUOTE CAN NEVER GO BEHIND PHOTO =====
+   Uses a real 2-column layout inside the right hero panel.
+   Left column = Aarti photo
+   Right column = quote
+*/
+.hero-photo{
+  position:relative !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) 235px !important;
+  align-items:stretch !important;
+  min-height:700px !important;
+  overflow:hidden !important;
+  isolation:isolate !important;
+  background:#e8ddd1 !important;
+}
+
+/* Background stays behind both columns */
+.office-scene,
+.photo-bg{
+  position:absolute !important;
+  inset:0 !important;
+  z-index:0 !important;
+}
+
+/* Photo gets its own left column */
+.portrait-frame{
+  position:relative !important;
+  left:auto !important;
+  bottom:auto !important;
+  width:auto !important;
+  height:100% !important;
+  grid-column:1 !important;
+  grid-row:1 !important;
+  z-index:2 !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  padding:55px 10px 0 28px !important;
+  overflow:hidden !important;
+}
+
+.portrait-frame img{
+  position:relative !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:92% !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+  z-index:2 !important;
+}
+
+/* Quote gets its OWN right column — impossible to overlap portrait */
+.wall-quote{
+  position:relative !important;
+  right:auto !important;
+  top:auto !important;
+  left:auto !important;
+  bottom:auto !important;
+  grid-column:2 !important;
+  grid-row:1 !important;
+  align-self:start !important;
+  justify-self:center !important;
+  width:205px !important;
+  margin-top:58px !important;
+  padding:22px !important;
+  z-index:10 !important;
+  background:#fffaf4 !important;
+  border:1px solid #c9b7a7 !important;
+  box-shadow:0 14px 34px rgba(48,32,22,.12) !important;
+  font-family:"Playfair Display",serif !important;
+  font-size:18px !important;
+  line-height:1.35 !important;
+  color:#644a3b !important;
+  pointer-events:none !important;
+}
+.wall-quote span{display:block !important}
+
+/* Chat remains floating at bottom-right */
+.chat-card{
+  position:absolute !important;
+  right:18px !important;
+  bottom:18px !important;
+  z-index:20 !important;
+  width:300px !important;
+}
+
+/* Large desktop */
+@media(min-width:1500px){
+  .hero-photo{
+    grid-template-columns:minmax(0,1fr) 250px !important;
+  }
+  .wall-quote{
+    width:220px !important;
+  }
+}
+
+/* Tablet */
+@media(max-width:1050px){
+  .hero-photo{
+    grid-template-columns:minmax(0,1fr) 185px !important;
+    min-height:650px !important;
+  }
+  .portrait-frame{
+    padding-left:15px !important;
+  }
+  .wall-quote{
+    width:160px !important;
+    margin-top:40px !important;
+    padding:16px !important;
+    font-size:14px !important;
+  }
+}
+
+/* Mobile */
+@media(max-width:650px){
+  .hero-photo{
+    grid-template-columns:minmax(0,1fr) 135px !important;
+    min-height:590px !important;
+  }
+  .portrait-frame{
+    padding:30px 4px 0 6px !important;
+  }
+  .portrait-frame img{
+    max-height:84% !important;
+  }
+  .wall-quote{
+    width:120px !important;
+    margin-top:25px !important;
+    padding:11px !important;
+    font-size:11px !important;
+  }
+  .chat-card{
+    width:250px !important;
+    right:10px !important;
+    bottom:10px !important;
+  }
+}
