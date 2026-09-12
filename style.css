@@ -1210,3 +1210,388 @@ footer{
     padding-right:15px;
   }
 }
+
+
+/* =========================================================
+   MOBILE POLISH V2
+   Cleaner editorial layout for phones only
+   ========================================================= */
+@media (max-width:650px){
+
+  /* Header */
+  .site-header{
+    height:68px !important;
+    padding:0 14px !important;
+    grid-template-columns:1fr auto !important;
+    gap:10px !important;
+  }
+
+  .brand{
+    min-width:0 !important;
+  }
+
+  .brand-script{
+    font-size:22px !important;
+    line-height:.9 !important;
+  }
+
+  .brand-name{
+    font-size:8px !important;
+    letter-spacing:.14em !important;
+    margin-left:18px !important;
+    white-space:nowrap !important;
+  }
+
+  .brand-tag{
+    display:none !important;
+  }
+
+  .header-cta{
+    padding:9px 12px !important;
+    font-size:10px !important;
+  }
+
+  /* Hero */
+  .hero{
+    display:block !important;
+    background:var(--paper) !important;
+  }
+
+  .hero-copy{
+    padding:32px 18px 24px !important;
+    text-align:center !important;
+    align-items:center !important;
+  }
+
+  .eyebrow{
+    font-size:9px !important;
+    letter-spacing:.22em !important;
+  }
+
+  .hero h1{
+    font-size:clamp(38px,11vw,48px) !important;
+    line-height:.96 !important;
+    margin:16px 0 12px !important;
+    max-width:360px !important;
+  }
+
+  .hero h2{
+    font-size:23px !important;
+    line-height:1.15 !important;
+    margin-bottom:12px !important;
+  }
+
+  .hero-lead{
+    font-size:15px !important;
+    line-height:1.55 !important;
+    max-width:360px !important;
+  }
+
+  /* 2 x 2 capability cards */
+  .feature-grid{
+    width:100% !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+    margin:22px 0 20px !important;
+  }
+
+  .feature-item{
+    min-height:76px !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    text-align:center !important;
+    gap:5px !important;
+    padding:11px 8px !important;
+    border:1px solid #e1d7cd !important;
+    border-radius:14px !important;
+    background:#fffaf5 !important;
+  }
+
+  .feature-icon{
+    font-size:22px !important;
+  }
+
+  .feature-item strong,
+  .feature-item span{
+    font-size:9px !important;
+    line-height:1.25 !important;
+  }
+
+  .hero-actions{
+    width:100% !important;
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+  }
+
+  .hero-actions .btn,
+  .hero-actions a,
+  .hero-actions button{
+    width:100% !important;
+    min-width:0 !important;
+    padding:12px 10px !important;
+    font-size:11px !important;
+  }
+
+  /* Make the first CTA span the row if there are 3 buttons */
+  .hero-actions > :first-child:nth-last-child(3){
+    grid-column:1/-1 !important;
+  }
+
+  /* Clean portrait section */
+  .hero-photo{
+    display:flex !important;
+    flex-direction:column !important;
+    min-height:0 !important;
+    margin:0 14px 18px !important;
+    padding:14px !important;
+    border-radius:22px !important;
+    overflow:hidden !important;
+    background:#e9ddd2 !important;
+    box-shadow:0 12px 32px rgba(45,29,20,.08) !important;
+  }
+
+  .photo-bg{
+    display:none !important;
+  }
+
+  .office-scene{
+    opacity:.38 !important;
+  }
+
+  .office-desk,
+  .office-plant,
+  .office-glow{
+    opacity:.22 !important;
+  }
+
+  .portrait-frame{
+    order:1 !important;
+    position:relative !important;
+    width:100% !important;
+    height:auto !important;
+    padding:0 !important;
+    overflow:visible !important;
+    display:flex !important;
+    justify-content:center !important;
+  }
+
+  .portrait-frame img{
+    width:100% !important;
+    max-width:320px !important;
+    height:auto !important;
+    max-height:none !important;
+    margin:0 auto !important;
+    border-radius:18px !important;
+    box-shadow:0 12px 28px rgba(43,27,18,.16) !important;
+  }
+
+  /* Quote becomes a neat card under photo */
+  .wall-quote{
+    order:2 !important;
+    position:relative !important;
+    width:100% !important;
+    max-width:none !important;
+    margin:12px 0 0 !important;
+    padding:14px 16px !important;
+    border-radius:14px !important;
+    border:1px solid #d7c8ba !important;
+    font-size:15px !important;
+    line-height:1.35 !important;
+    text-align:center !important;
+    background:rgba(255,250,244,.96) !important;
+    box-shadow:none !important;
+  }
+
+  /* Ask Aarti becomes a compact inline card */
+  .chat-card{
+    order:3 !important;
+    position:relative !important;
+    right:auto !important;
+    bottom:auto !important;
+    width:100% !important;
+    max-width:none !important;
+    margin:10px 0 0 !important;
+    padding:12px !important;
+    border-radius:14px !important;
+    box-shadow:none !important;
+    border:1px solid #e3d8cf !important;
+  }
+
+  .chat-mini-photo{
+    width:42px !important;
+    height:42px !important;
+  }
+
+  .chat-card-copy strong{
+    font-size:16px !important;
+  }
+
+  /* Impact strip: 2 columns instead of long vertical stack */
+  .impact-strip{
+    grid-template-columns:1fr 1fr !important;
+    gap:0 !important;
+    padding:10px 14px 16px !important;
+  }
+
+  .impact-item{
+    padding:15px 10px !important;
+    border-bottom:1px solid #d8d0c8 !important;
+    text-align:center !important;
+  }
+
+  .impact-item strong{
+    font-size:24px !important;
+  }
+
+  .impact-item span{
+    font-size:11px !important;
+  }
+
+  .impact-quote{
+    grid-column:1/-1 !important;
+    padding:18px 8px 4px !important;
+    font-size:16px !important;
+    text-align:center !important;
+    transform:none !important;
+  }
+
+  /* Sections */
+  .section{
+    padding:58px 18px !important;
+  }
+
+  .section-kicker{
+    margin-bottom:18px !important;
+    font-size:9px !important;
+  }
+
+  .about-grid{
+    gap:26px !important;
+  }
+
+  .about-grid h3,
+  .section-title{
+    font-size:clamp(34px,10vw,44px) !important;
+    line-height:1 !important;
+  }
+
+  .section-title{
+    margin-bottom:24px !important;
+  }
+
+  .body-copy p{
+    font-size:15px !important;
+    line-height:1.6 !important;
+  }
+
+  /* Experience */
+  .timeline article{
+    padding:18px 0 !important;
+    gap:6px !important;
+  }
+
+  .timeline h4{
+    font-size:22px !important;
+    line-height:1.15 !important;
+  }
+
+  .timeline p{
+    font-size:14px !important;
+    line-height:1.5 !important;
+  }
+
+  /* Projects */
+  .project-grid{
+    gap:12px !important;
+  }
+
+  .project-card{
+    min-height:0 !important;
+    padding:22px !important;
+    border-radius:16px !important;
+  }
+
+  .project-no{
+    font-size:34px !important;
+  }
+
+  .project-card h4{
+    font-size:26px !important;
+  }
+
+  /* Education */
+  .education-grid{
+    gap:16px !important;
+  }
+
+  .education-grid h4{
+    font-size:25px !important;
+  }
+
+  /* Contact */
+  .contact-section{
+    padding:62px 18px !important;
+    text-align:center !important;
+  }
+
+  .contact-section h3{
+    font-size:clamp(40px,11vw,54px) !important;
+    margin:20px 0 34px !important;
+  }
+
+  .contact-links{
+    align-items:center !important;
+  }
+
+  .contact-email{
+    font-size:17px !important;
+    word-break:break-word !important;
+  }
+
+  /* Footer */
+  footer{
+    text-align:center !important;
+    align-items:center !important;
+    gap:6px !important;
+  }
+
+  /* Floating chat button */
+  .chat-fab{
+    width:50px !important;
+    height:50px !important;
+    right:12px !important;
+    bottom:12px !important;
+    font-size:19px !important;
+  }
+
+  .chat-panel{
+    right:8px !important;
+    bottom:70px !important;
+    width:calc(100vw - 16px) !important;
+    height:min(520px,calc(100vh - 86px)) !important;
+    border-radius:16px !important;
+  }
+}
+
+@media (max-width:390px){
+  .hero-actions{
+    grid-template-columns:1fr !important;
+  }
+
+  .hero-actions > :first-child:nth-last-child(3){
+    grid-column:auto !important;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .impact-strip{
+    grid-template-columns:1fr !important;
+  }
+
+  .impact-quote{
+    grid-column:auto !important;
+  }
+}
