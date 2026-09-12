@@ -1724,3 +1724,67 @@ footer{
     width:100% !important;
   }
 }
+
+
+/* =========================================================
+   FINAL MOBILE HERO CLEANUP V3
+   On phones, remove the large Ask Aarti promo card from the
+   hero. The floating chat button remains available.
+   This guarantees the portrait is never covered by that card.
+   ========================================================= */
+@media (max-width:650px){
+
+  .chat-card{
+    display:none !important;
+  }
+
+  /* Give the portrait more visual space */
+  .hero-photo{
+    padding:18px 14px 16px !important;
+    min-height:0 !important;
+  }
+
+  .portrait-frame{
+    position:relative !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+    overflow:visible !important;
+  }
+
+  .portrait-frame img{
+    display:block !important;
+    width:100% !important;
+    max-width:330px !important;
+    height:auto !important;
+    max-height:none !important;
+    margin:0 auto !important;
+    object-fit:contain !important;
+    object-position:center bottom !important;
+  }
+
+  /* Quote becomes a simple full-width block below the portrait */
+  .wall-quote{
+    position:relative !important;
+    inset:auto !important;
+    width:100% !important;
+    max-width:330px !important;
+    margin:14px auto 0 !important;
+    padding:14px 16px !important;
+    text-align:center !important;
+    transform:none !important;
+  }
+
+  /* Keep only the compact floating chatbot entry point */
+  .chat-fab{
+    display:block !important;
+    position:fixed !important;
+    width:48px !important;
+    height:48px !important;
+    right:12px !important;
+    bottom:12px !important;
+    z-index:999 !important;
+  }
+}
