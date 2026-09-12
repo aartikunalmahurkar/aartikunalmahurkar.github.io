@@ -16,7 +16,7 @@
 <link rel="canonical" href="https://aartikunalmahurkar.github.io/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>Aarti Kunal Mahurkar | Operations Excellence</title>
-<link rel="stylesheet" href="style.css?v=21">
+<link rel="stylesheet" href="style.css?v=23">
 </head>
 <body>
 <header class="site-header">
@@ -24,18 +24,27 @@
     <span class="brand-mark">AKM</span>
     <span class="brand-copy"><b>Aarti Kunal Mahurkar</b><small>Operations • Enablement • Learning</small></span>
   </a>
-  <nav id="nav" class="nav">
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#journey">Journey</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+  <nav id="nav" class="nav" aria-label="Primary navigation">
+    <div class="nav-mobile-head">
+      <div><small>Explore</small><strong>Aarti’s portfolio</strong></div>
+      <button id="navClose" class="nav-close" type="button" aria-label="Close navigation">×</button>
+    </div>
+    <a href="#about"><span>01</span>About</a>
+    <a href="#work"><span>02</span>Work</a>
+    <a href="#journey"><span>03</span>Journey</a>
+    <a href="#skills"><span>04</span>Skills</a>
+    <a href="#contact"><span>05</span>Contact</a>
+    <a class="nav-resume" href="Aarti_Gaikwad_cv.pdf" target="_blank" rel="noopener"><span>↗</span>Open résumé</a>
   </nav>
   <div class="nav-actions">
     <a class="mini-cta" href="Aarti_Gaikwad_cv.pdf" target="_blank" rel="noopener">Résumé ↗</a>
-    <button id="menu" class="menu" type="button" aria-expanded="false" aria-label="Open menu">☰</button>
+    <button id="menu" class="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open navigation">
+      <span class="menu-label">Menu</span>
+      <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
   </div>
 </header>
+<div id="navBackdrop" class="nav-backdrop" aria-hidden="true"></div>
 
 <main id="top"><div class="status-ribbon"><span></span> Open to operations, enablement & learning opportunities</div>
 <section class="hero">
@@ -327,6 +336,7 @@
     <button type="submit">Send</button>
   </form>
 </div>
-<script src="script.js?v=21"></script>
+<script src="script.js?v=23"></script>
+<script src="motion.js?v=23"></script>
 </body>
 </html>

@@ -2,53 +2,53 @@ document.addEventListener("DOMContentLoaded", () => {
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  // Mobile navigation
+  // Mobile navigation — drawer pattern
   const menu = document.getElementById("menu");
   const nav = document.getElementById("nav");
+  const navClose = document.getElementById("navClose");
+  const backdrop = document.getElementById("navBackdrop");
 
-  const closeMenu = () => {
+  const setMenuState = (open) => {
     if (!menu || !nav) return;
-    nav.classList.remove("open");
-    menu.classList.remove("open");
-    menu.setAttribute("aria-expanded", "false");
-    menu.setAttribute("aria-label", "Open menu");
-    menu.textContent = "☰";
-    document.body.classList.remove("menu-lock");
+    nav.classList.toggle("open", open);
+    menu.classList.toggle("open", open);
+    backdrop?.classList.toggle("open", open);
+    menu.setAttribute("aria-expanded", String(open));
+    menu.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    backdrop?.setAttribute("aria-hidden", String(!open));
+    document.body.classList.toggle("menu-lock", open);
+
+    if (open) {
+      window.setTimeout(() => {
+        const firstLink = nav.querySelector("a");
+        firstLink?.focus({preventScroll:true});
+      }, 180);
+    } else {
+      menu.focus({preventScroll:true});
+    }
   };
 
-  const openMenu = () => {
-    if (!menu || !nav) return;
-    nav.classList.add("open");
-    menu.classList.add("open");
-    menu.setAttribute("aria-expanded", "true");
-    menu.setAttribute("aria-label", "Close menu");
-    menu.textContent = "×";
-    document.body.classList.add("menu-lock");
-  };
+  const openMenu = () => setMenuState(true);
+  const closeMenu = () => setMenuState(false);
 
   if (menu && nav) {
     menu.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
-      nav.classList.contains("open") ? closeMenu() : openMenu();
+      setMenuState(!nav.classList.contains("open"));
     });
+
+    navClose?.addEventListener("click", closeMenu);
+    backdrop?.addEventListener("click", closeMenu);
 
     nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", closeMenu);
     });
 
-    document.addEventListener("click", (event) => {
-      if (
-        nav.classList.contains("open") &&
-        !nav.contains(event.target) &&
-        !menu.contains(event.target)
-      ) {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 980 && nav.classList.contains("open")) {
         closeMenu();
       }
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 980) closeMenu();
     });
   }
 
